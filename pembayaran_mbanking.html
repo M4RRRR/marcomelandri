@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode Pembayaran M-Banking</title>
+    <!-- Tambahan stylesheet atau styling lainnya bisa ditambahkan di sini -->
+</head>
+
+<body>
+    <header>
+        <h1>Metode Pembayaran M-Banking</h1>
+    </header>
+
+    <section>
+        <div class="payment-method-detail">
+            <p>Silakan lakukan pembayaran menggunakan M-Banking dengan langkah-langkah berikut:</p>
+            <ol>
+                <li>Buka aplikasi M-Banking Anda.</li>
+                <li>Pilih menu pembayaran atau transfer.</li>
+                <li>Masukkan nomor rekening atau informasi pembayaran yang diberikan.</li>
+                <li>Verifikasi dan konfirmasikan pembayaran.</li>
+            </ol>
+            <p>Setelah pembayaran selesai, klik tombol konfirmasi di bawah.</p>
+
+            <!-- Tombol Konfirmasi -->
+            <button onclick="konfirmasiPembayaran()">Konfirmasi Pembayaran</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>Terima kasih atas pembayaran Anda!</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk mengkonfirmasi pembayaran
+        function konfirmasiPembayaran() {
+            // Membangkitkan nomor antrian acak 6 angka
+            var nomorAntrian = Math.floor(100000 + Math.random() * 900000);
+            alert("Nomor Antrian Pembayaran Anda: " + nomorAntrian + "\nPembayaran Anda telah dikonfirmasi. Terima kasih!");
+            // Anda dapat menambahkan logika atau mengarahkan ke halaman terima kasih sesuai kebutuhan.
+        }
+    </script>
+</body>
+
+</html>

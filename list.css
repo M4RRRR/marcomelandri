@@ -1,0 +1,90 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-image: url('backround.jpg'); /* Ganti 'background.jpg' dengan URL atau nama gambar latar belakang Anda */
+    background-repeat: no-repeat;
+     background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff; /* Warna teks putih */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Efek bayangan teks */
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav ul {
+    background-color: rgba(244, 244, 244, 0.8);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 8px; /* Tambahkan sudut bulat */
+    overflow: hidden; /* Pastikan overflow diatur menjadi tersembunyi */
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Efek transisi untuk tautan */
+}
+
+nav a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Warna latar belakang saat dihover */
+}
+
+section {
+    text-align: center;
+    color: #333; /* Warna teks hitam */
+}
+
+.package-detail {
+    background-color: rgba(244, 244, 244, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+select, button {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(70, 22, 22);
+    color: #fff;
+    width: 100%;
+    border-top: 1px solid #fff; /* Garis atas putih */
+}
+
+@media only screen and (max-width: 600px) {
+    .package-detail {
+        width: 90%;
+    }
+}

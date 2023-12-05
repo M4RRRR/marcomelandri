@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Harga Paket Liburan</title>
+    <link rel="stylesheet" type="text/css" href="list.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="liburan.html">DreamRoute TRAVEL</a></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="liburan.html">Menu Utama</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="package-detail">
+            <h2>Pilih Paket Liburan</h2>
+
+            <!-- Form untuk memilih paket -->
+            <form id="hargaForm" action="form_data_diri.html" method="get">
+                <!-- Input hidden untuk menyimpan harga terpilih -->
+                <input type="hidden" id="hargaTerpilih" name="hargaTerpilih">
+
+                <label for="pilihanHarga">Pilih Paket:</label>
+                <select id="pilihanHarga" name="pilihanHarga" onchange="updateHarga()">
+                    <option value="18500000">Paket 3 Hari 2 Malam - Rp 18.500.000</option>
+                    <option value="27750000">Paket 5 Hari 4 Malam - Rp 27.750.000</option>
+                    <option value="37000000">Paket 7 Hari 6 Malam - Rp 37.000.000</option>
+                </select>
+
+                <h3>Fasilitas:</h3>
+                <ul>
+                    <li>Akomodasi bintang 5</li>
+                    <li>Pemandu wisata berpengalaman</li>
+                    <li>Tiket masuk ke atraksi utama</li>
+                    <li>Transportasi lokal</li>
+                    <li>Sarapan harian</li>
+                    <li>Spa dan Pijat</li>
+                </ul>
+
+                <h3>Total Harga:</h3>
+                <p id="hargaDipilih">Rp 18.500.000</p>
+
+                <!-- Tombol Pemesanan -->
+                <button type="submit">Pesan Sekarang</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>Harga per orang, tidak bisa di pakai lebih dari satu orang.</p>
+    </footer>
+
+    <!-- Script untuk menyinkronkan harga terpilih -->
+    <script>
+        function updateHarga() {
+            var hargaTerpilih = document.getElementById('pilihanHarga').value;
+            document.getElementById('hargaTerpilih').value = hargaTerpilih;
+            document.getElementById('hargaDipilih').innerText = 'Rp ' + formatRupiah(hargaTerpilih);
+        }
+
+        function formatRupiah(angka) {
+            var reverse = angka.toString().split('').reverse().join(''),
+                ribuan = reverse.match(/\d{1,3}/g);
+            ribuan = ribuan.join('.').split('').reverse().join('');
+            return ribuan;
+        }
+    </script>
+</body>
+
+</html>

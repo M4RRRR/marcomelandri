@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Harga Paket Liburan</title>
+    <link rel="stylesheet" type="text/css" href="list.css">
+</head>
+
+<body>
+    <header>
+        <h1><a href="liburan.html">DreamRoute TRAVEL</a></h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="liburan.html">Menu Utama</a></li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="package-detail">
+            <h2>Pilih Paket Liburan</h2>
+
+            <!-- Form untuk memilih paket -->
+            <form id="hargaForm">
+                <label for="pilihanHarga">Pilih Paket:</label>
+                <select id="pilihanHarga" name="pilihanHarga">
+                    <option value="25000000">Paket 3 Hari 2 Malam - Rp 25.000.000</option>
+                    <option value="40000000">Paket 5 Hari 4 Malam - Rp 40.000.000</option>
+                    <option value="55000000">Paket 7 Hari 6 Malam - Rp 55.000.000</option>
+                </select>
+
+                <h3>Fasilitas:</h3>
+                <ul>
+                    <li>Akomodasi bintang 5</li>
+                    <li>Pemandu wisata berpengalaman</li>
+                    <li>Tiket masuk ke situs bersejarah</li>
+                    <li>Transportasi lokal</li>
+                    <li>Sarapan harian</li>
+                    <li>City tour dan aktivitas kota</li>
+                    <li>Spa dan pijat</li>
+                    <li>Wi-Fi gratis</li>
+                    <li>Makan malam tradisional Jepang</li>
+                    <li>Menyewa kimono untuk foto</li>
+                </ul>
+
+                <h3>Total Harga:</h3>
+                <p id="totalHarga">Rp 25.000.000</p>
+
+                <!-- Tombol Pemesanan -->
+                <button type="button" onclick="pesanSekarang()">Pesan Sekarang</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p> Harga per orang, tidak bisa digunakan lebih dari satu orang.</p>
+    </footer>
+
+    <script>
+        // Fungsi untuk menangani perubahan pilihan harga
+        document.getElementById('pilihanHarga').addEventListener('change', function () {
+            var hargaTerpilih = this.value;
+            document.getElementById('totalHarga').innerText = 'Rp ' + formatRupiah(hargaTerpilih);
+        });
+
+        // Fungsi untuk memformat harga menjadi format rupiah
+        function formatRupiah(angka) {
+            var reverse = angka.toString().split('').reverse().join(''),
+                ribuan = reverse.match(/\d{1,3}/g);
+            ribuan = ribuan.join('.').split('').reverse().join('');
+            return ribuan;
+        }
+
+        // Fungsi untuk menangani pesanan
+        function pesanSekarang() {
+            var hargaTerpilih = document.getElementById('pilihanHarga').value;
+            alert("Terima kasih! Paket liburan Anda berhasil dipesan. Total Harga: Rp " + formatRupiah(hargaTerpilih));
+            // Anda dapat menambahkan logika atau mengarahkan ke halaman pemesanan sesuai kebutuhan.
+        }
+    </script>
+</body>
+
+</html>
